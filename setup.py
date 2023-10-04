@@ -1,19 +1,20 @@
 from setuptools import find_packages, setup
 
-with open("README.md", "r") as f:
+with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="saluda",
-    version="0.0.1",
-    description="Paquete de pruebas",
+    name="saludador",
+    version="0.0.2",
+    description="Paquete de pruebas para subir a PyPi",
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     long_description=long_description,
+    include_package_data=True,
     long_description_content_type="text/markdown",
     url="https://github.com/jaimefeldman/saludador",
-    author="jimix",
-    author_email="jaimefel@arjancodes.com",
+    author="Jaime Andrés Feldman",
+    author_email="jaimefel@gmail.com",
     license="MIT",
     classifiers=[
         "License :: OSI Approved :: MIT License",

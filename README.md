@@ -1,22 +1,16 @@
 # Projecto pruebas en python
 ---
-Paquete que instala la aplicacion saluda, solo para probar como empaquetar con python usando dependencias y descargando desde PyPi.
-
-### Aspectos técnicos 
-
-
-Luego es importante incluir en el archivo `setup.py`
-
-`include_package_data=True,`
-
-
+Paquete que instala una simple aplicación de linea de comandos que saca un mensaje por pantalla 
+en color, usando la librería rich.
 
 ## Instalación 
 
-### Dentro del direcotrio del proyecto pruebas ejecutar:
-```cmd
-## Uso
+`pip install saludador`
 
+## Uso
+en la linea de comandos:
+
+`> saluda`
 
 ## Contribuciones
 Son bienvenidos las peticiones de pull, vea primero la lista de asuntos en discución de que le gutaría modificar.
