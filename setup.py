@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="saludador",
-    version="0.0.2",
+    version="0.0.3",
     description="Paquete de pruebas para subir a PyPi",
     package_dir={"": "src"},
     packages=find_packages(where="src"),
@@ -21,7 +21,12 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Operating System :: OS Independent",
     ],
-    install_requires=["rich>= 13.5.3"],
+    install_requires=[
+        "rich>= 13.5.3",
+        "progress>=1.6",
+        "requests >=2.31.0",
+        "cursor >=1.3.5"
+    ],
 
     entry_points={
         'console_scripts': [
