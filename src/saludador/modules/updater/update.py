@@ -8,10 +8,10 @@
     :copyright: (c) 2023 by Jaime Andrés Feldman.
     :license: GPL3, see LICENSE for more details.
 """
-import subprocess, sys, requests, time 
-
+import subprocess, sys, requests, time, readchar
 import saludador.modules.updater.spinner as spinner
-from rich.console import Console
+
+from   rich.console import Console
 
 console = Console()
 
@@ -71,19 +71,26 @@ def check_updates(package_name=None):
         if check_internet_connection():
 
             spinner.start()
-            versoins = check_versions(package_name)
+            versions = check_versions(package_name)
             spinner.stop()
-            if not versoins[0] == versoins[1]:
-                console.print(f"[[cyan]notice[/]]A new release is available: {versoins[0]} -> {versoins[1]}") 
+            if not versions[0] == versions[1]:
+                version_actual = versions[0]
+                ultima_version = versions[1]
+                console.print(f"[[cyan]notice[/]] A new release is available: [red]{version_actual}[/] -> [green]{ultima_version}[/]") 
                 exit = False 
                 while not exit: 
-                    answer = input("do you want to update[y/n/i]")
-                    if answer == 'i' or answer == 'I':
-                        print("mensaje con info")
-                    else:
-                        exit = True
-                print("haciendo otra cosa...")
+                    # answer = input("Do you want to update?[Y/n/i]:d")
+                    console.print(r"Do you want to update? [[yellow]y[/]es/[yellow]n[/]o/[yellow]i[/]nfo]:", end="")
+                    answer = readchar.readchar()
 
+                    if answer == 'i' or answer == 'I':
+                        print("\nmensaje con info")
+                    elif answer == 'n'or answer == 'N':
+                        print("\nno actualiza nada..")
+                        exit = True
+                    elif answer == 'y' or answer == "Y" or answer == "\n":
+                        print("\nactualizando!")
+                        exit = True
 
 
     except KeyboardInterrupt:
