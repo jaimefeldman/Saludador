@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="saludador",
-    version="0.0.3",
+    version="0.0.4",
     description="Paquete de pruebas para subir a PyPi",
     package_dir={"": "src"},
     packages=find_packages(where="src"),

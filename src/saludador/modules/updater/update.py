@@ -76,7 +76,7 @@ def check_updates(package_name=None):
             if not versions[0] == versions[1]:
                 version_actual = versions[0]
                 ultima_version = versions[1]
-                console.print(f"[[cyan]notice[/]] A new release is available: [red]{version_actual}[/] -> [green]{ultima_version}[/]") 
+                console.print(f"[[cyan]notice[/]] A new release is available: [red]{version_actual}[/] -> [green]{ultima_version}[/]", highlight=False) 
                 exit = False 
                 while not exit: 
                     # answer = input("Do you want to update?[Y/n/i]:d")
